@@ -1,0 +1,289 @@
+{
+  "intents": [
+    {
+      "intent": "AboutUs",
+      "examples": [
+        {
+          "text": "who are you?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "bye",
+      "examples": [
+        {
+          "text": "bye"
+        },
+        {
+          "text": "good bye"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "greeting",
+      "examples": [
+        {
+          "text": "good evening"
+        },
+        {
+          "text": "good morning"
+        },
+        {
+          "text": "hello"
+        },
+        {
+          "text": "hi"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "joke",
+      "examples": [
+        {
+          "text": "can you tell me a joke"
+        },
+        {
+          "text": "tell me a joke"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Question",
+      "examples": [
+        {
+          "text": "how can I play?"
+        },
+        {
+          "text": "what is this game?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "robots",
+      "examples": [
+        {
+          "text": "what do these robots do?"
+        },
+        {
+          "text": "why do we use this webpage?"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_10_1627337696025",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "bye",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "good bye"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#bye",
+      "dialog_node": "node_10_1627337696025",
+      "previous_sibling": "node_3_1627337168922"
+    },
+    {
+      "type": "standard",
+      "title": "robots",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Robots will fight with the aim of blowing up the enemy balloon, with this page you can control the movement of the arm and base of the robot."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#robots",
+      "dialog_node": "node_2_1627335912778",
+      "previous_sibling": "node_5_1627335660046"
+    },
+    {
+      "type": "standard",
+      "title": "joke",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Why is the number six afraid?\nBecause seven eight nine (seven ate nine)"
+              },
+              {
+                "text": "I'm afraid for the calendar. Its days are numbered."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#joke",
+      "dialog_node": "node_3_1627337168922",
+      "previous_sibling": "node_6_1627336399453"
+    },
+    {
+      "type": "standard",
+      "title": "AboutUs",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "we are a national commercial enterprise established in 2010 registered with the Ministry of Commerce and specialized in automated equipment, robotics and artificial intelligence"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#AboutUs",
+      "dialog_node": "node_5_1627335660046",
+      "previous_sibling": "node_7_1627330855309"
+    },
+    {
+      "type": "standard",
+      "title": "play",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "On this page you can control the movement of the robot arm and when you press \"Go to Base Control\" you will be taken to the page dedicated to controlling the movement of the base"
+              },
+              {
+                "text": "I hope you win :)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#Question",
+      "dialog_node": "node_6_1627336399453",
+      "previous_sibling": "node_2_1627335912778"
+    },
+    {
+      "type": "standard",
+      "title": "greeting",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello,"
+              },
+              {
+                "text": "How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#greeting",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_7_1627330855309",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Welcome"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Speak",
+  "language": "en",
+  "description": ""
+}

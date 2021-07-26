@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Direction Control</title>
+		<style>
+			body{background: #e6e6e6}
+			.button
+			{
+				position: fixed;
+				width: 10%;
+				
+				margin-left: 39%;
+				background: white;
+				font-weight: bolder;
+			}
+			.button1
+			{
+				position: fixed;
+				width: 10%;
+				margin-left: 50%;
+				background: white;
+				font-weight: bolder;
+			}
+			.button2
+			{
+				position: fixed;
+				width: 10%;
+				margin-left: 28%;
+				background: white;
+				font-weight: bolder;
+			}
+			.NAME1 {
+				margin-left: 38.5%;
+			}
+			a{
+				margin-left: 39%;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h1 class="NAME1">Base Control</h1>
+		<form action="connect1.php" method="POST"> 
+		<div>
+				<input class="button" type="submit" id="B1" name= "forward" value="forward"><br><br>
+				<input class="button1" type="submit" id="B2" name ="left" value="left">
+				<input class="button" type="submit" id="B3" name ="stop" value="stop">
+				<input class="button2" type="submit" id="B4" name ="right" value="right"><br><br>
+				<input class="button" type="submit" id="B5" name= "backward" value="backward"><br><br><br>
+				<a href = "http://localhost/Task2/index.html"> Go to Robot Arm Control <a>
+		</div>
+		</form>
+	</body>
+</html>
